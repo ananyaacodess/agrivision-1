@@ -1,0 +1,288 @@
+{
+  "model": "MobileNetV2 transfer-learning (PyTorch, CUDA + AMP), 224x224, Adam 1e-4, 18 epochs (early-stopped, best epoch 14)",
+  "framework": "pytorch",
+  "dataset": "data_raw",
+  "eval_split": "val",
+  "val_accuracy": 0.887,
+  "test_accuracy": 0.887,
+  "best_epoch": 14,
+  "class_metrics": [
+    {
+      "class": "Apple___Apple_scab",
+      "precision": 0.947,
+      "recall": 0.776,
+      "f1": 0.853,
+      "support": 504
+    },
+    {
+      "class": "Apple___Black_rot",
+      "precision": 0.92,
+      "recall": 0.833,
+      "f1": 0.874,
+      "support": 497
+    },
+    {
+      "class": "Apple___Cedar_apple_rust",
+      "precision": 0.928,
+      "recall": 0.88,
+      "f1": 0.903,
+      "support": 440
+    },
+    {
+      "class": "Apple___healthy",
+      "precision": 0.897,
+      "recall": 0.851,
+      "f1": 0.873,
+      "support": 502
+    },
+    {
+      "class": "Blueberry___healthy",
+      "precision": 0.876,
+      "recall": 0.934,
+      "f1": 0.904,
+      "support": 454
+    },
+    {
+      "class": "Cherry_(including_sour)___Powdery_mildew",
+      "precision": 0.867,
+      "recall": 0.96,
+      "f1": 0.911,
+      "support": 421
+    },
+    {
+      "class": "Cherry_(including_sour)___healthy",
+      "precision": 0.978,
+      "recall": 0.888,
+      "f1": 0.931,
+      "support": 456
+    },
+    {
+      "class": "Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot",
+      "precision": 0.865,
+      "recall": 0.856,
+      "f1": 0.86,
+      "support": 410
+    },
+    {
+      "class": "Corn_(maize)___Common_rust_",
+      "precision": 0.996,
+      "recall": 0.99,
+      "f1": 0.993,
+      "support": 477
+    },
+    {
+      "class": "Corn_(maize)___Northern_Leaf_Blight",
+      "precision": 0.897,
+      "recall": 0.91,
+      "f1": 0.903,
+      "support": 477
+    },
+    {
+      "class": "Corn_(maize)___healthy",
+      "precision": 0.989,
+      "recall": 0.985,
+      "f1": 0.987,
+      "support": 465
+    },
+    {
+      "class": "Grape___Black_rot",
+      "precision": 0.902,
+      "recall": 0.799,
+      "f1": 0.847,
+      "support": 472
+    },
+    {
+      "class": "Grape___Esca_(Black_Measles)",
+      "precision": 0.796,
+      "recall": 0.938,
+      "f1": 0.861,
+      "support": 480
+    },
+    {
+      "class": "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)",
+      "precision": 0.91,
+      "recall": 0.991,
+      "f1": 0.949,
+      "support": 430
+    },
+    {
+      "class": "Grape___healthy",
+      "precision": 0.938,
+      "recall": 0.927,
+      "f1": 0.932,
+      "support": 423
+    },
+    {
+      "class": "Orange___Haunglongbing_(Citrus_greening)",
+      "precision": 0.974,
+      "recall": 0.986,
+      "f1": 0.98,
+      "support": 503
+    },
+    {
+      "class": "Peach___Bacterial_spot",
+      "precision": 0.934,
+      "recall": 0.858,
+      "f1": 0.894,
+      "support": 459
+    },
+    {
+      "class": "Peach___healthy",
+      "precision": 0.937,
+      "recall": 0.97,
+      "f1": 0.953,
+      "support": 432
+    },
+    {
+      "class": "Pepper,_bell___Bacterial_spot",
+      "precision": 0.9,
+      "recall": 0.828,
+      "f1": 0.863,
+      "support": 478
+    },
+    {
+      "class": "Pepper,_bell___healthy",
+      "precision": 0.868,
+      "recall": 0.809,
+      "f1": 0.838,
+      "support": 497
+    },
+    {
+      "class": "Potato___Early_blight",
+      "precision": 0.863,
+      "recall": 0.963,
+      "f1": 0.91,
+      "support": 485
+    },
+    {
+      "class": "Potato___Late_blight",
+      "precision": 0.869,
+      "recall": 0.847,
+      "f1": 0.858,
+      "support": 485
+    },
+    {
+      "class": "Potato___healthy",
+      "precision": 0.871,
+      "recall": 0.857,
+      "f1": 0.864,
+      "support": 456
+    },
+    {
+      "class": "Raspberry___healthy",
+      "precision": 0.841,
+      "recall": 0.962,
+      "f1": 0.897,
+      "support": 445
+    },
+    {
+      "class": "Soybean___healthy",
+      "precision": 0.929,
+      "recall": 0.903,
+      "f1": 0.916,
+      "support": 505
+    },
+    {
+      "class": "Squash___Powdery_mildew",
+      "precision": 0.947,
+      "recall": 0.993,
+      "f1": 0.97,
+      "support": 434
+    },
+    {
+      "class": "Strawberry___Leaf_scorch",
+      "precision": 0.921,
+      "recall": 0.975,
+      "f1": 0.947,
+      "support": 444
+    },
+    {
+      "class": "Strawberry___healthy",
+      "precision": 0.78,
+      "recall": 0.939,
+      "f1": 0.852,
+      "support": 456
+    },
+    {
+      "class": "Tomato___Bacterial_spot",
+      "precision": 0.934,
+      "recall": 0.864,
+      "f1": 0.897,
+      "support": 425
+    },
+    {
+      "class": "Tomato___Early_blight",
+      "precision": 0.714,
+      "recall": 0.744,
+      "f1": 0.729,
+      "support": 480
+    },
+    {
+      "class": "Tomato___Late_blight",
+      "precision": 0.908,
+      "recall": 0.728,
+      "f1": 0.808,
+      "support": 463
+    },
+    {
+      "class": "Tomato___Leaf_Mold",
+      "precision": 0.879,
+      "recall": 0.864,
+      "f1": 0.871,
+      "support": 470
+    },
+    {
+      "class": "Tomato___Septoria_leaf_spot",
+      "precision": 0.848,
+      "recall": 0.693,
+      "f1": 0.763,
+      "support": 436
+    },
+    {
+      "class": "Tomato___Spider_mites Two-spotted_spider_mite",
+      "precision": 0.744,
+      "recall": 0.91,
+      "f1": 0.819,
+      "support": 435
+    },
+    {
+      "class": "Tomato___Target_Spot",
+      "precision": 0.763,
+      "recall": 0.663,
+      "f1": 0.71,
+      "support": 457
+    },
+    {
+      "class": "Tomato___Tomato_Yellow_Leaf_Curl_Virus",
+      "precision": 0.945,
+      "recall": 0.939,
+      "f1": 0.942,
+      "support": 490
+    },
+    {
+      "class": "Tomato___Tomato_mosaic_virus",
+      "precision": 0.943,
+      "recall": 0.958,
+      "f1": 0.95,
+      "support": 448
+    },
+    {
+      "class": "Tomato___healthy",
+      "precision": 0.797,
+      "recall": 0.969,
+      "f1": 0.874,
+      "support": 481
+    }
+  ],
+  "macro_avg": {
+    "precision": 0.8899,
+    "recall": 0.8878,
+    "f1": 0.8865
+  },
+  "weighted_avg": {
+    "precision": 0.8901,
+    "recall": 0.887,
+    "f1": 0.8862
+  },
+  "note": "Real training metrics from backend/train.py \u2014 PlantVillage-38, 70,295 train / 17,572 val images"
+}

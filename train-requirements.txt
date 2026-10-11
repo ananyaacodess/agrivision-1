@@ -1,0 +1,7 @@
+# Training deps (PyTorch + CUDA on NVIDIA GPUs, CPU fallback otherwise).
+# For GPU training on Windows:
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
+torch
+torchvision
+scikit-learn==1.5.2
+matplotlib==3.9.2

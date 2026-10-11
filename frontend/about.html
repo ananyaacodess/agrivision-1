@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About the model - AgriVision</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%232E7D32'/%3E%3Cpath d='M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+<svg class="side-leaf left" viewBox="0 0 200 800" aria-hidden="true"><g fill="none" stroke="#7CB342" stroke-width="5" opacity=".5"><path d="M100 780 C 60 600, 60 400, 100 80"/><ellipse cx="100" cy="90" rx="26" ry="44" fill="#AED581" stroke="#558B2F" opacity=".8"/></g></svg>
+<svg class="side-leaf right" viewBox="0 0 200 800" aria-hidden="true"><g fill="none" stroke="#7CB342" stroke-width="5" opacity=".5"><path d="M100 780 C 140 600, 140 400, 100 80"/><ellipse cx="100" cy="90" rx="26" ry="44" fill="#AED581" stroke="#558B2F" opacity=".8"/></g></svg>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand"><span class="brand-leaf"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span><div><strong>AgriVision</strong><small>Crop Disease Detection</small></div></div>
+    <div class="nav-links">
+      <a href="/">Home</a><a href="/about" class="active">About</a>
+    </div>
+  </div>
+</nav>
+
+<header class="about-hero">
+  <div class="about-hero-inner">
+    <span class="pill"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg> Model card</span>
+    <h1>What the model is,<br/>what it scores, <em>how it's trained.</em></h1>
+    <p id="modelDesc">Loading model details…</p>
+    <div class="status-strip" id="statusStrip">Checking inference engine…</div>
+  </div>
+</header>
+
+<main>
+  <!-- SCORES -->
+  <section class="section">
+    <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg> Model score & accuracy</h2>
+    <p class="sub">Overall accuracy plus the training curves and confusion matrix from the training run.</p>
+    <div class="perf-grid">
+      <div class="card donut-card">
+        <h3>Overall accuracy</h3>
+        <div class="donut-wrap"><canvas id="accChart"></canvas><div class="donut-center"><strong id="accNum">-</strong><span>test acc</span></div></div>
+        <div class="kv"><span>Validation</span><strong id="valNum">-</strong></div>
+        <div class="kv"><span>Macro F1</span><strong id="f1Num">-</strong></div>
+        <div class="kv"><span>Weighted F1</span><strong id="wf1Num">-</strong></div>
+        <div class="kv"><span>Evaluated on</span><strong id="evalSplit">-</strong></div>
+      </div>
+      <div class="card">
+        <h3>Training curves - accuracy & loss</h3>
+        <img class="plot-img" src="/api/plots/training_curves" alt="Training accuracy and loss curves"
+             onerror="this.outerHTML='<p class=&quot;sub&quot;>Plot not available yet - train the model to generate it.</p>'" />
+      </div>
+    </div>
+    <div class="card">
+      <h3>Confusion matrix - per-class</h3>
+      <img class="plot-img" src="/api/plots/confusion_matrix" alt="Confusion matrix across all classes"
+           onerror="this.outerHTML='<p class=&quot;sub&quot;>Plot not available yet - train the model to generate it.</p>'" />
+    </div>
+  </section>
+
+  <!-- PER-CLASS DETAILS -->
+  <section class="section cream">
+    <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg> F1 score per class - details</h2>
+    <p class="sub">Precision, recall, F1 and support for every class on the held-out set.</p>
+    <div class="card table-card">
+      <div class="table-wrap"><table id="metricsTable">
+        <thead><tr><th>Class</th><th>Precision</th><th>Recall</th><th>F1</th><th>Support</th><th></th></tr></thead>
+        <tbody></tbody>
+      </table></div>
+    </div>
+  </section>
+
+  <!-- TRAINING -->
+  <section class="section">
+    <h2><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.527a2 2 0 0 1-.211.896L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.069-10.127A2 2 0 0 1 14 9.527V2"/><path d="M8.5 2h7"/><path d="M7 16h10"/></svg> Training recipe</h2>
+    <p class="sub">Exact configuration used in <code>backend/train.py</code>.</p>
+    <div class="train-grid">
+      <div class="card"><h3>Architecture</h3><p>MobileNetV2 pretrained on ImageNet → average-pool → Dropout → Dense-256 (ReLU) → Dropout → softmax over 38 classes. Backbone frozen except the last blocks, fine-tuned on GPU.</p><code>input 224×224 · Adam · PyTorch</code></div>
+      <div class="card"><h3>Data & augmentation</h3><p>PlantVillage-38: 70,295 train / 17,572 validation images. One-time decode cache; flip, rotate ±15°, zoom, shift and brightness all computed on the GPU.</p><code>gpu-aug · memmap cache</code></div>
+      <div class="card"><h3>Schedule</h3><p>Up to 25 epochs, EarlyStopping (patience 4, keeps best), ReduceLROnPlateau (×0.3), mixed precision. Best result: 88.7% validation accuracy at epoch 14.</p><code>python -m backend.train --data ./data_raw --epochs 25</code></div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="foot-brand"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg><span><strong>AgriVision</strong> · Crop disease detection from a leaf photo</span></div><small>Predictions are advisory - confirm with an agronomist before spraying.</small></footer>
+<script src="/static/about.js"></script>
+</body>
+</html>

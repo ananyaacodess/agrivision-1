@@ -1,0 +1,9 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+pillow==11.1.0
+numpy==1.26.4
+# CPU-only torch for Render (linux). Windows dev machines keep their CUDA
+# build: these lines are skipped there via the sys_platform marker.
+torch @ https://download.pytorch.org/whl/cpu/torch-2.4.1%2Bcpu-cp311-cp311-linux_x86_64.whl ; sys_platform == "linux"
+torchvision @ https://download.pytorch.org/whl/cpu/torchvision-0.19.1%2Bcpu-cp311-cp311-linux_x86_64.whl ; sys_platform == "linux"

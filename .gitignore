@@ -1,0 +1,7 @@
+__pycache__/
+.venv/
+data/
+data_raw/
+model/training_progress.json
+*.h5
+*.keras
